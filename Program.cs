@@ -31,8 +31,12 @@ namespace WinpCapInstaller
 
         static void Main(string[] args)
         {
-            isInstalledWinPcap();
-            //installWinpCap();
+            installWinpCap();
+            bool a = isInstalledWinPcap();
+            Console.WriteLine(a.ToString());
+            Console.ReadLine();
+
+
             //uninstallWinpCap();
 
         }
@@ -86,7 +90,7 @@ namespace WinpCapInstaller
 
         public static void installWinpCap()
         {
-            string winpcap_path = "WinPcap";
+            string winpcap_path = "";
             string pthread_dll = Path.Combine(winpcap_path, DLL_PTHREAD_VC);
             string wpcap_dll_x86 = Path.Combine(winpcap_path, DLL_WPCAP_x86);
             string wpcap_dll_x64 = "";
@@ -167,6 +171,7 @@ namespace WinpCapInstaller
             }
             catch (IOException iox)
             {
+                
             }
 
             var proc = new Process
@@ -181,10 +186,11 @@ namespace WinpCapInstaller
                 }
             };
             proc.Start();
-            //while (!proc.StandardOutput.EndOfStream)
-            //{
-            //    var a = proc.StandardOutput.ReadLine();
-            //}
+            while (!proc.StandardOutput.EndOfStream)
+            {
+                var a = proc.StandardOutput.ReadLine();
+                Console.WriteLine(a);
+            }
             var proc1 = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -197,10 +203,11 @@ namespace WinpCapInstaller
                 }
             };
             proc1.Start();
-            //while (!proc1.StandardOutput.EndOfStream)
-            //{
-            //    var a = proc1.StandardOutput.ReadLine();
-            //}
+            while (!proc1.StandardOutput.EndOfStream)
+            {
+                var a = proc1.StandardOutput.ReadLine();
+                Console.WriteLine(a);
+            }
             //Process.Start("sc create npf binPath=system32\\drivers\\npf.sys type=kernel start=auto error=normal tag=no DisplayName=\"NetGroup Packet Filter Driver\"");
             //Process.Start("sc start npf");
         }
