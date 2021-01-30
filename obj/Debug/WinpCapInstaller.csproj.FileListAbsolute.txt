@@ -1,0 +1,6 @@
+C:\Users\11\Desktop\WinpCapInstaller\WinpCapInstaller\obj\Debug\WinpCapInstaller.csprojAssemblyReference.cache
+C:\Users\11\Desktop\WinpCapInstaller\WinpCapInstaller\obj\Debug\WinpCapInstaller.csproj.CoreCompileInputs.cache
+C:\Users\11\Desktop\WinpCapInstaller\WinpCapInstaller\bin\Debug\WinpCapInstaller.exe
+C:\Users\11\Desktop\WinpCapInstaller\WinpCapInstaller\bin\Debug\WinpCapInstaller.pdb
+C:\Users\11\Desktop\WinpCapInstaller\WinpCapInstaller\obj\Debug\WinpCapInstaller.exe
+C:\Users\11\Desktop\WinpCapInstaller\WinpCapInstaller\obj\Debug\WinpCapInstaller.pdb
