@@ -21,9 +21,9 @@ namespace WinpCapInstaller
         static string DLL_WPCAP_x64 = "wpcap_x64.dll";
         static string DLL_WPCAP = "wpcap.dll";
         static string DLL_PTHREAD_VC = "pthreadVC.dll";
-        static string DRIVER_NPF_NT4 = "drivers\\npf_nt4_x86.sys";
-        static string DRIVER_NPF_NT5_NT6_x86 = "drivers\\npf_nt5_nt6_x86.sys";
-        static string DRIVER_NPF_NT5_NT6_x64 = "drivers\\npf_nt5_nt6_x64.sys";
+        static string DRIVER_NPF_NT4 = "npf_nt4_x86.sys";
+        static string DRIVER_NPF_NT5_NT6_x86 = "npf_nt5_nt6_x86.sys";
+        static string DRIVER_NPF_NT5_NT6_x64 = "npf_nt5_nt6_x64.sys";
         static string DRIVER_NPF = "npf.sys";
         static string DLL_DST_PATH = "C:\\windows\\System32";
         static string DLL_DST_PATH_x86_64 = "C:\\Windows\\sysWOW64";
@@ -32,9 +32,10 @@ namespace WinpCapInstaller
         static void Main(string[] args)
         {
             installWinpCap();
-            bool a = isInstalledWinPcap();
-            Console.WriteLine(a.ToString());
-            Console.ReadLine();
+            //isInstalledWinPcap();
+            //installWinpCap();
+            //Console.WriteLine(a.ToString());
+            //Console.ReadLine();
 
 
             //uninstallWinpCap();
@@ -62,7 +63,8 @@ namespace WinpCapInstaller
                     Arguments = "/C sc query npf",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
-                    CreateNoWindow = true
+                    CreateNoWindow = true,
+                    
                 }
             };
 
@@ -78,6 +80,7 @@ namespace WinpCapInstaller
                 if (outputProcessList[i].Contains("STATE") && outputProcessList[i].Contains("RUNNING"))
                 {
                     result = true;
+                    break;
                 }
                 else
                 {
